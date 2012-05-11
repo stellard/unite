@@ -3,7 +3,7 @@ $:.push File.expand_path("../lib", __FILE__)
 require "unity/version"
 
 Gem::Specification.new do |s|
-  s.name        = "unity"
+  s.name        = "unitfy"
   s.version     = Unity::VERSION
   s.authors     = ["stellard"]
   s.email       = ["scott.ellard@gmail.com"]
