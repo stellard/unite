@@ -6,8 +6,8 @@ module Unity
   module Conversion
 
     extend ::ActiveSupport::Concern
-    include Unity::Comparison
-    include Unity::Fraction
+    include Comparison
+    include Fraction
     
     included do
 

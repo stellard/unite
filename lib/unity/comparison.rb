@@ -6,7 +6,7 @@ module Unity
   module Comparison
 
     extend ::ActiveSupport::Concern
-    include Unity::Dimension::Integer
+    include Dimension::Integer
 
     included do
 

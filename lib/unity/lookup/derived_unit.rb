@@ -1,22 +1,24 @@
 # -*- encoding : utf-8 -*-
-class DerivedUnit
+module Unity
+  class DerivedUnit
 
-  include ActiveModel::Validations
-  include Unity::Dimension::Vector
-  include Unity::Conversion
+    include ActiveModel::Validations
+    include Dimension::Vector
+    include Conversion
 
-  attr_accessor :name, :numerator, :denominator, :value
+    attr_accessor :name, :numerator, :denominator, :value
 
-  alias :to_s :name
-  validates_presence_of :name
-  validates_format_of :name, :with => /\A[^\s*\/\^]+\Z/, :message => "cannot contain *, / or ^"
+    alias :to_s :name
+    validates_presence_of :name
+    validates_format_of :name, :with => /\A[^\s*\/\^]+\Z/, :message => "cannot contain *, / or ^"
 
-  def initialize(attributes = {})
-    attributes.each do |name, value|
-      send("#{name}=", value)
+    def initialize(attributes = {})
+      attributes.each do |name, value|
+        send("#{name}=", value)
+      end
+      super
     end
-    super
+
+
   end
-
-
 end

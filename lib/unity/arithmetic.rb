@@ -3,7 +3,7 @@ module Unity
   module Arithmetic
 
     extend ::ActiveSupport::Concern
-    include Unity::Conversion
+    include Conversion
 
     included do
 
