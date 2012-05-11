@@ -8,9 +8,9 @@ GIT
 PATH
   remote: .
   specs:
-    unity (0.0.1)
-      activemodel
-      activesupport
+    unity (1.0.0)
+      activemodel (>= 3.0.0)
+      activesupport (>= 3.0.0)
 
 GEM
   remote: http://rubygems.org/

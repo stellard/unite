@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.authors     = ["stellard"]
   s.email       = ["scott.ellard@gmail.com"]
   s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.summary     = %q{Unity provides extensions to your objects to support values with units}
+  s.description = %q{Unity provides extensions to your objects to support values with units}
 
   s.rubyforge_project = "unity"
 
@@ -18,8 +18,7 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
-  # specify any dependencies here; for example:
-  s.add_dependency "activesupport"
-  s.add_dependency "activemodel"
-  # s.add_runtime_dependency "rest-client"
+  s.add_dependency "activesupport", ">= 3.0.0"
+  s.add_dependency "activemodel", ">= 3.0.0"
+
 end
