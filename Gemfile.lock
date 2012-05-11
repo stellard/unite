@@ -8,7 +8,7 @@ GIT
 PATH
   remote: .
   specs:
-    unitfy (1.0.0)
+    unite (1.0.0)
       activemodel (>= 3.0.0)
       activesupport (>= 3.0.0)
 
@@ -86,4 +86,4 @@ DEPENDENCIES
   ruby-debug-base19 (>= 0.11.26)
   ruby-debug19
   shoulda-matchers!
-  unitfy!
+  unite!

@@ -4,7 +4,7 @@ require "unity/version"
 
 Gem::Specification.new do |s|
   s.name        = "unite"
-  s.version     = Unitey::VERSION
+  s.version     = Unity::VERSION
   s.authors     = ["stellard"]
   s.email       = ["scott.ellard@gmail.com"]
   s.homepage    = ""
