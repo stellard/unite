@@ -1,8 +1,8 @@
 # -*- encoding : utf-8 -*-
 require 'spec_helper'
 
-describe UnitLookup, :focus => true do
-  subject { UnitLookup } 
+describe Unity::Lookup, :focus => true do
+  subject { Unity::Lookup } 
 
 
   describe "adding and finding" do
@@ -27,7 +27,7 @@ describe UnitLookup, :focus => true do
         let(:valid) { false }
 
         it "should raise an error" do
-          lambda { subject.add(unit_object) }.should raise_exception(UnitLookup::Invalid)
+          lambda { subject.add(unit_object) }.should raise_exception(Unity::Lookup::Invalid)
         end
 
       end
@@ -44,7 +44,7 @@ describe UnitLookup, :focus => true do
 
 
         it "should raise not found if unit is undefined" do
-          lambda { subject.find!(name+"undefined") }.should raise_exception(UnitLookup::Undefined)
+          lambda { subject.find!(name+"undefined") }.should raise_exception(Unity::Lookup::Undefined)
         end
 
         context "with non uniq name" do
@@ -52,7 +52,7 @@ describe UnitLookup, :focus => true do
           let(:duplicate_unit_object) { unit_stub(:name => duplicate_name) }
 
           it "should raise an error" do
-            lambda { subject.add(duplicate_unit_object) }.should raise_exception(UnitLookup::Duplicate)
+            lambda { subject.add(duplicate_unit_object) }.should raise_exception(Unity::Lookup::Duplicate)
           end
         end
 
@@ -93,7 +93,7 @@ describe UnitLookup, :focus => true do
         context 'with invalid object' do
           let(:valid) { false } 
           it "should raise an error" do
-            lambda { subject.add_property(propert_object) }.should raise_exception(UnitLookup::Invalid)
+            lambda { subject.add_property(propert_object) }.should raise_exception(Unity::Lookup::Invalid)
           end
         end
 
@@ -112,7 +112,7 @@ describe UnitLookup, :focus => true do
           end
 
           it "should raise exception if already defined" do
-            lambda {subject.add_property(propert_object)}.should raise_exception UnitLookup::Duplicate
+            lambda {subject.add_property(propert_object)}.should raise_exception Unity::Lookup::Duplicate
           end
 
           it 'should be able to find by dimension id' do

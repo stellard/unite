@@ -1,13 +1,13 @@
 # -*- encoding : utf-8 -*-
-module Units
+module Unity
   class IncompatibleError < RuntimeError
   end
 
   module Conversion
 
     extend ::ActiveSupport::Concern
-    include Units::Comparison
-    include Units::Fraction
+    include Unity::Comparison
+    include Unity::Fraction
     
     included do
 

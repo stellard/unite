@@ -1,9 +1,9 @@
 # -*- encoding : utf-8 -*-
-module Units
+module Unity
   module Arithmetic
 
     extend ::ActiveSupport::Concern
-    include Units::Conversion
+    include Unity::Conversion
 
     included do
 

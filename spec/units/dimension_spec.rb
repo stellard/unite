@@ -1,7 +1,7 @@
 # -*- encoding : utf-8 -*-
 require 'spec_helper'
 
-describe Units::Dimension do
+describe Unity::Dimension do
 
   
 end

@@ -1,9 +1,9 @@
 # -*- encoding : utf-8 -*-
 class Quantity
 
-  include Units::Dimension::Vector
-  include Units::Conversion
-  include Units::Arithmetic
+  include Unity::Dimension::Vector
+  include Unity::Conversion
+  include Unity::Arithmetic
 
   def initialize(attributes = {})
     attributes.each do |name, value|

@@ -3,7 +3,7 @@ require 'spec_helper'
 require 'unit_lookup/simple_unit.rb'
 
 describe SimpleUnit, :focus => true do
-  it { should ensure_inclusion_of(:dimension).in_array(Units::Dimension::LIST) }
+  it { should ensure_inclusion_of(:dimension).in_array(Unity::Dimension::LIST) }
   it { should validate_presence_of(:si_factor)}
   it { should validate_presence_of(:name)}
   it { should validate_presence_of(:dimension)}
@@ -24,7 +24,7 @@ describe SimpleUnit, :focus => true do
     let(:dimension) { :length }
     subject { Fabricate.build :simple_unit, :name => "m", :si_factor => 1, :dimension => :length }
 
-    its(:dimension_vector) { should == Units::Dimension::LIST.map{|d| d == dimension ? 1 : 0}}
+    its(:dimension_vector) { should == Unity::Dimension::LIST.map{|d| d == dimension ? 1 : 0}}
     its(:property_name) { should == :distance }
 
   end

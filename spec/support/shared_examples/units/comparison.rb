@@ -38,7 +38,7 @@ shared_examples_for "comparable unit" do
       let(:expression2) { "g" }
 
       it "should raise exception" do
-        lambda { subject }.should raise_exception Units::IncompatibleError 
+        lambda { subject }.should raise_exception Unity::IncompatibleError 
       end
     end
   end

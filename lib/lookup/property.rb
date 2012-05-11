@@ -2,8 +2,8 @@
 class Property
  
   include ActiveModel::Validations
-  include Units::Dimension::Vector
-  include Units::Conversion
+  include Unity::Dimension::Vector
+  include Unity::Conversion
 
   attr_accessor :name, :numerator, :denominator, :value
 

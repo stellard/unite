@@ -7,7 +7,7 @@ $LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'rspec'
 require 'shoulda/matchers/active_model'
 require 'mocha'
-require 'units'
+require 'unity'
 require 'unit_lookup'
 require 'fabrication'
 

@@ -1,12 +1,12 @@
 # -*- encoding : utf-8 -*-
-module Units
+module Unity
   class IncompatibleError < RuntimeError
   end
   
   module Comparison
 
     extend ::ActiveSupport::Concern
-    include Units::Dimension::Integer
+    include Unity::Dimension::Integer
 
     included do
 

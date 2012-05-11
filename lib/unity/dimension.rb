@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-module Units
+module Unity
   module Dimension
     extend self
     
