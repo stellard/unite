@@ -33,11 +33,12 @@ class UnitLookup
     end
 
     def compatible_units int_or_sym_or_string
-      int = 
+      int =
         if int_or_sym_or_string.is_a? Integer
           int_or_sym_or_string
         else
-          find_property(int_or_sym_or_string).try(:dimension_int)
+          tmp = find_property(int_or_sym_or_string)
+          tmp.nil? ? nil : tmp.dimension_int
         end
       (@@unit_ints[int] || []).map do |key|
         get_object key
@@ -45,7 +46,7 @@ class UnitLookup
     end
 
     def find_property int_or_sym_or_string
-      key = 
+      key =
         if int_or_sym_or_string.is_a? Integer
           @@property_ints[int_or_sym_or_string]
         else
@@ -79,7 +80,7 @@ class UnitLookup
       load "#{File.dirname(__FILE__)}/unit_lookup/definitions.rb"
     end
 
-    private 
+    private
 
     def store_object object
       SecureRandom.uuid.tap do |key|

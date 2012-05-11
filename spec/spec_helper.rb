@@ -5,6 +5,7 @@ $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 
 require 'rspec'
+require 'shoulda/matchers/active_model'
 require 'mocha'
 require 'units'
 require 'unit_lookup'
@@ -20,6 +21,8 @@ RSpec.configure do |config|
 
   config.before(:each) do
   end
+
+  config.include(Shoulda::Matchers::ActiveModel)
 
   config.filter_run :focus => true
   config.run_all_when_everything_filtered = true
