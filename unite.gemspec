@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version     = Unity::VERSION
   s.authors     = ["stellard"]
   s.email       = ["scott.ellard@gmail.com"]
-  s.homepage    = ""
+  s.homepage    = "https://github.com/stellard/unity"
   s.summary     = %q{Unite provides extensions to your objects to support values with units}
   s.description = %q{Unite provides extensions to your objects to support values with units}
 
