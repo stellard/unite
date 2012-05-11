@@ -16,3 +16,5 @@ require 'unity/arithmetic'
 
 
 require 'unity/lookup'
+
+require "unity/quantity"
