@@ -23,11 +23,11 @@ module Unity
       end
 
       def numerator_dimension_vector
-        self.expanded_numerator.inject(Dimension.blank_dimension_vector){|v, unit| add_vectors(v, UnitLookup.find!(unit).dimension_vector) }
+        self.expanded_numerator.inject(Dimension.blank_dimension_vector){|v, unit| add_vectors(v, Lookup.find!(unit).dimension_vector) }
       end
 
       def denominator_dimension_vector
-        self.expanded_denominator.inject(Dimension.blank_dimension_vector){|v, unit| add_vectors(v, UnitLookup.find!(unit).dimension_vector) }
+        self.expanded_denominator.inject(Dimension.blank_dimension_vector){|v, unit| add_vectors(v, Lookup.find!(unit).dimension_vector) }
       end
 
       def add_vectors v1, v2

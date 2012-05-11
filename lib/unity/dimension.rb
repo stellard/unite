@@ -32,6 +32,6 @@ module Unity
   end
 end
 
-require 'units/dimension/integer'
-require 'units/dimension/vector'
+require 'unity/dimension/integer'
+require 'unity/dimension/vector'
 

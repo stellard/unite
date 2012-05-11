@@ -1,6 +1,6 @@
 # -*- encoding : utf-8 -*-
 require 'spec_helper'
-require 'unit_lookup/simple_unit.rb'
+require 'unity/lookup/simple_unit.rb'
 
 describe SimpleUnit, :focus => true do
   it { should ensure_inclusion_of(:dimension).in_array(Unity::Dimension::LIST) }

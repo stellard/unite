@@ -8,7 +8,6 @@ require 'rspec'
 require 'shoulda/matchers/active_model'
 require 'mocha'
 require 'unity'
-require 'unit_lookup'
 require 'fabrication'
 
 # Requires supporting files with custom matchers and macros, etc,

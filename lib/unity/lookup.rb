@@ -1,8 +1,8 @@
 # -*- encoding : utf-8 -*-
 require 'active_model'
-require 'unit_lookup/simple_unit'
-require 'unit_lookup/derived_unit'
-require 'unit_lookup/property'
+require 'unity/lookup/simple_unit'
+require 'unity/lookup/derived_unit'
+require 'unity/lookup/property'
 require 'securerandom'
 
 module Unity
@@ -78,7 +78,7 @@ module Unity
       end
 
       def reload!
-        load "#{File.dirname(__FILE__)}/unit_lookup/definitions.rb"
+        load "#{File.dirname(__FILE__)}/lookup/definitions.rb"
       end
 
       private

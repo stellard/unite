@@ -8,8 +8,11 @@ end
 require 'active_support'
 
 # Dir["#{Rails.root.to_s}/lib/units/**/*.rb"].each {|file| require file }
-require 'units/fraction'
-require 'units/dimension'
-require 'units/comparison'
-require 'units/conversion'
-require 'units/arithmetic'
+require 'unity/fraction'
+require 'unity/dimension'
+require 'unity/comparison'
+require 'unity/conversion'
+require 'unity/arithmetic'
+
+
+require 'unity/lookup'

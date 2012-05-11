@@ -20,7 +20,7 @@ module Unity
       end
 
       def property
-        UnitLookup.find_property(dimension_int)
+        Lookup.find_property(dimension_int)
       end
 
       private

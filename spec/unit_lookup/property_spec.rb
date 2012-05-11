@@ -1,6 +1,6 @@
 # -*- encoding : utf-8 -*-
 require 'spec_helper'
-require 'unit_lookup/property.rb'
+require 'unity/lookup/property.rb'
 
 
 describe Property, :focus => true do
