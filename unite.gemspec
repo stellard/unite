@@ -3,13 +3,13 @@ $:.push File.expand_path("../lib", __FILE__)
 require "unity/version"
 
 Gem::Specification.new do |s|
-  s.name        = "unitfy"
-  s.version     = Unity::VERSION
+  s.name        = "unite"
+  s.version     = Unitey::VERSION
   s.authors     = ["stellard"]
   s.email       = ["scott.ellard@gmail.com"]
   s.homepage    = ""
-  s.summary     = %q{Unity provides extensions to your objects to support values with units}
-  s.description = %q{Unity provides extensions to your objects to support values with units}
+  s.summary     = %q{Unite provides extensions to your objects to support values with units}
+  s.description = %q{Unite provides extensions to your objects to support values with units}
 
   s.rubyforge_project = "unity"
 
