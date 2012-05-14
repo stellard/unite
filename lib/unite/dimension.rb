@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-module Unity
+module Unite
   module Dimension
     extend self
     
@@ -32,6 +32,6 @@ module Unity
   end
 end
 
-require 'unity/dimension/integer'
-require 'unity/dimension/vector'
+require 'unite/dimension/integer'
+require 'unite/dimension/vector'
 

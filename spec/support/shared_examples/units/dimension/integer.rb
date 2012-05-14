@@ -15,7 +15,7 @@ shared_examples "dimension integer" do
     let(:property_stub) { stub } 
     before do
       subject.stubs(:dimension_int => dimension_int)
-      Unity::Lookup.stubs(:find_property).with(dimension_int).returns(property_stub)
+      Unite::Lookup.stubs(:find_property).with(dimension_int).returns(property_stub)
     end    
     its(:property) { should == property_stub } 
   end

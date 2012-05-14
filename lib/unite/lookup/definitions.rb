@@ -1,6 +1,6 @@
 # -*- encoding : utf-8 -*-
 
-module Unity
+module Unite
   
   Lookup.clear!
 

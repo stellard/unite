@@ -58,7 +58,7 @@ shared_examples_for "unit fractions" do
       context 'with invalid format' do
         let(:expression) { 'km/kg/s' }
         it "should raise exception" do
-          lambda { subject }.should raise_exception Unity::InvalidFormat
+          lambda { subject }.should raise_exception Unite::InvalidFormat
         end
       end
 

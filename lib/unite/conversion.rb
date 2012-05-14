@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-module Unity
+module Unite
   class IncompatibleError < RuntimeError
   end
 

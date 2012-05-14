@@ -7,7 +7,7 @@ $LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'rspec'
 require 'shoulda/matchers/active_model'
 require 'mocha'
-require 'unity'
+require 'unite'
 require 'fabrication'
 
 # Requires supporting files with custom matchers and macros, etc,

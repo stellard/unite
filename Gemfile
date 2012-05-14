@@ -1,6 +1,6 @@
 source "http://rubygems.org"
 
-# Specify your gem's dependencies in unity.gemspec
+# Specify your gem's dependencies in unite.gemspec
 gemspec
 
 group :test do

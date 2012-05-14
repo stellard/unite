@@ -1,9 +1,9 @@
 # -*- encoding : utf-8 -*-
-module Unity
+module Unite
   module Dimension
     module Vector
       extend ::ActiveSupport::Concern
-      include Unity::Fraction
+      include Unite::Fraction
 
       included do
       end

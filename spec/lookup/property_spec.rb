@@ -1,8 +1,8 @@
 # -*- encoding : utf-8 -*-
 require 'spec_helper'
-require 'unity/lookup/property.rb'
+require 'unite/lookup/property.rb'
 
-module Unity
+module Unite
   describe Property do
     it { should validate_presence_of(:name)}
 

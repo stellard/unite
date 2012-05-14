@@ -113,10 +113,10 @@ shared_examples "unit arithmetic" do
         include_examples "division operation"
 
         it "should raise error for subtraction" do
-          lambda { object1 - object2 }.should raise_exception Unity::IncompatibleError
+          lambda { object1 - object2 }.should raise_exception Unite::IncompatibleError
         end
         it "should raise error for addition" do
-          lambda { object1 + object2 }.should raise_exception Unity::IncompatibleError
+          lambda { object1 + object2 }.should raise_exception Unite::IncompatibleError
         end
 
       end

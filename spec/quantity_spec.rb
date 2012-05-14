@@ -1,7 +1,7 @@
 # -*- encoding : utf-8 -*-
 require 'spec_helper'
 
-module Unity
+module Unite
   describe Quantity do
 
     subject { Quantity.new :expression => expression } 

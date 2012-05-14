@@ -1,7 +1,7 @@
 # -*- encoding : utf-8 -*-
 require 'spec_helper'
 
-describe Unity::Dimension::Vector do
+describe Unite::Dimension::Vector do
 
 end
 

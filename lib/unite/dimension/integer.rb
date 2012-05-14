@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-module Unity
+module Unite
   module Dimension
     module Integer
       extend ::ActiveSupport::Concern

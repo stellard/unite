@@ -1,8 +1,8 @@
 # -*- encoding : utf-8 -*-
 require 'spec_helper'
-require 'unity/lookup/simple_unit.rb'
+require 'unite/lookup/simple_unit.rb'
 
-module Unity
+module Unite
   describe SimpleUnit do
     it { should ensure_inclusion_of(:dimension).in_array(Dimension::LIST) }
     it { should validate_presence_of(:si_factor)}

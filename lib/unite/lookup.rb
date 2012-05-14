@@ -1,11 +1,11 @@
 # -*- encoding : utf-8 -*-
 require 'active_model'
-require 'unity/lookup/simple_unit'
-require 'unity/lookup/derived_unit'
-require 'unity/lookup/property'
+require 'unite/lookup/simple_unit'
+require 'unite/lookup/derived_unit'
+require 'unite/lookup/property'
 require 'securerandom'
 
-module Unity
+module Unite
   class Lookup
 
     class Invalid < RuntimeError

@@ -1,17 +1,17 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
-require "unity/version"
+require "unite/version"
 
 Gem::Specification.new do |s|
   s.name        = "unite"
-  s.version     = Unity::VERSION
+  s.version     = Unite::VERSION
   s.authors     = ["stellard"]
   s.email       = ["scott.ellard@gmail.com"]
-  s.homepage    = "https://github.com/stellard/unity"
+  s.homepage    = "https://github.com/stellard/unite"
   s.summary     = %q{Unite provides extensions to your objects to support values with units}
   s.description = %q{Unite provides extensions to your objects to support values with units}
 
-  s.rubyforge_project = "unity"
+  s.rubyforge_project = "unite"
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")

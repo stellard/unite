@@ -1,8 +1,8 @@
 # -*- encoding : utf-8 -*-
 require 'spec_helper'
-require 'unity/lookup/derived_unit.rb'
+require 'unite/lookup/derived_unit.rb'
 
-module Unity
+module Unite
   describe DerivedUnit do
     it { should validate_presence_of(:name)}
 
