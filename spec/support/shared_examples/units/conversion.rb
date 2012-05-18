@@ -39,11 +39,10 @@ shared_examples "convertable value" do
     context "with value on the to" do
       let(:from) { '2*km' } 
       let(:to) { '10*m' }
-      
+
       its(:value) { should == 2000.0 }
       its(:unit) { should == 'm' }
     end
   end
-
 
 end

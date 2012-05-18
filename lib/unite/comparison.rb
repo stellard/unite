@@ -2,7 +2,7 @@
 module Unite
   class IncompatibleError < RuntimeError
   end
-  
+
   module Comparison
 
     extend ::ActiveSupport::Concern
@@ -27,7 +27,11 @@ module Unite
     def == other
       self.compatible?(other) && self.convert_to(other).value == other.value
     end
-  
+
+    def compatible_units
+      Lookup.compatible_units self.dimension_int
+    end
+
   end
 end
 

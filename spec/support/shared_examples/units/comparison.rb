@@ -60,10 +60,17 @@ shared_examples_for "comparable unit" do
       end
     end
 
-    context "with non comparible units" do
+    context "with non compatible units" do
       let(:expression1) { "1*m" }
       let(:expression2) { "1*g" }
       it { should be_false } 
     end
   end
+
+
+  describe "compatible_units" do
+    subject { described_class.new :expression => '1*m' } 
+    its(:compatible_units) { subject.map(&:to_s).should include('km', 'm') }
+  end
+
 end

@@ -8,7 +8,7 @@ module Unite
     extend ::ActiveSupport::Concern
     include Comparison
     include Fraction
-    
+
     included do
 
     end
@@ -37,7 +37,7 @@ module Unite
 
     def get_si_factor unit_array
       expand_unit_array(unit_array).map do |element|
-          Lookup.find!(element).si_factor
+        Lookup.find!(element).si_factor
       end.inject(1.0) {|product, factor| product*factor}
     end
 

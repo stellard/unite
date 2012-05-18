@@ -14,5 +14,12 @@ module Unite
     include_examples "unit fractions"
 
   end
+
+  describe "to_s and to_sym" do
+    subject { Property.new :name => name }
+    let(:name) { "mass" }
+    its(:to_s) { should == name }
+    its(:to_sym) { should == name.to_sym }
+  end
 end
 
