@@ -9,7 +9,7 @@ module Unite
       end
 
       module ClassMethods
-      
+
       end  
 
       def dimension_vector
@@ -17,7 +17,7 @@ module Unite
       end
 
       private
-    
+
       def generate_dimension_vector
         subtract_vectors numerator_dimension_vector, denominator_dimension_vector
       end
@@ -31,13 +31,13 @@ module Unite
       end
 
       def add_vectors v1, v2
-        LIST.length.times.map{|i| v1[i] + v2[i]}
+        VECTOR_LIST.length.times.map{|i| v1[i] + v2[i]}
       end
 
       def subtract_vectors v1, v2
-        LIST.length.times.map{|i| v1[i] - v2[i]}
+        VECTOR_LIST.length.times.map{|i| v1[i] - v2[i]}
       end
-      
+
     end
   end
 end

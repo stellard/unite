@@ -14,6 +14,14 @@ shared_examples "convertable value" do
       its(:unit) { should == 'm' }
     end
 
+    context "with no unit" do
+      let(:from) { '1.0' } 
+      let(:to) { '' }
+
+      its(:value) { should == 1.0 }
+      its(:unit) { should == '' }
+    end
+
     context "with exponents on units" do
       let(:from) { '1000000*m^2' } 
       let(:to) { 'km^2' }

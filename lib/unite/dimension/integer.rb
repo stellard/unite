@@ -26,7 +26,7 @@ module Unite
       private
 
       def generate_dimension_integer
-        LIST.length.times.inject(0){|sum, i| sum + (DIMVALS[i] * dimension_vector[i])}
+        VECTOR_LIST.length.times.inject(0){|sum, i| sum + (DIMVALS[i] * dimension_vector[i])}
       end
 
     end

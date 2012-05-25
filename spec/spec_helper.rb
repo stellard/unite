@@ -4,11 +4,21 @@
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 
+
+begin
+  require 'ruby-debug'
+  puts "USING DEBUGGER"
+rescue
+  puts "NOT USING DEBUGGER"
+end
+
+
 require 'rspec'
 require 'shoulda/matchers/active_model'
 require 'mocha'
 require 'unite'
 require 'fabrication'
+
 
 # Requires supporting files with custom matchers and macros, etc,
 # in ./support/ and its subdirectories.

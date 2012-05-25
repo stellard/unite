@@ -4,7 +4,8 @@ shared_examples_for "unit fractions" do
 
     subject { described_class.new :expression => expression }
 
-    describe "required methods" do 
+    describe "required methods" do
+      subject {  described_class.new }
       it { should respond_to(:value) } 
       it { should respond_to(:value=) } 
       it { should respond_to(:numerator) } 

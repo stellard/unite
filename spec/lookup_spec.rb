@@ -3,7 +3,7 @@ require 'spec_helper'
 
 module Unite
   describe Lookup do
-    subject { Lookup } 
+    subject { Lookup }
 
 
     describe "adding and finding" do
