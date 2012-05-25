@@ -6,6 +6,7 @@ end
 
 
 require 'active_support'
+require 'bigdecimal'
 
 # Dir["#{Rails.root.to_s}/lib/units/**/*.rb"].each {|file| require file }
 require 'unite/fraction'

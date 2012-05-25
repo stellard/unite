@@ -41,7 +41,7 @@ module Unite
       new_denominator = self.denominator + other.denominator
       self.class.new(:value => (self.value * other.value), :numerator => new_numerator, :denominator => new_denominator).tap(&:reduce)
     end
-    
+
     def coerce(other)
       case other
       when Numeric

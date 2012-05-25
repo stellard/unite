@@ -86,7 +86,7 @@ module Unite
 
     def extract_value! method
       number_regex = /\A[-+]?\d*\.?\d+([eE][-+]?\d+)?\Z/
-      seperate!(self.send(method)){|x| number_regex =~ x }.map(&:to_f).
+      seperate!(self.send(method)){|x| number_regex =~ x }.map{|n| BigDecimal.new(n)}.
         inject(1.0){|product, number| product*number }
     end
 
