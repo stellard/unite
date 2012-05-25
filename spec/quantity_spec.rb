@@ -35,6 +35,15 @@ module Unite
           Quantity.init(value).should == quantity
         end
       end
+
+      context "without unit" do
+        let(:expression) { "#{unit}" }
+        let(:unit) { 'L' } 
+
+        it "should initalize via expression" do
+          Quantity.init(unit).should == quantity
+        end
+      end
     end
   end
 end

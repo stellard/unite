@@ -18,7 +18,7 @@ shared_examples_for "unit fractions" do
       let(:expression) { '100.12345' }
       let(:big_decimal) { BigDecimal(expression) }
 
-      # its(:value) { should be_instance_of(BigDecimal) }
+      its(:value) { should be_instance_of(BigDecimal) }
       its(:value) {should == big_decimal }
     end
 
