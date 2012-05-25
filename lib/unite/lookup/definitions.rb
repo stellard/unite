@@ -51,6 +51,8 @@ module Unite
   #Volume
   Lookup.add DerivedUnit.new(:name => "cubic_meter", :expression => 'm^3')
   Lookup.add DerivedUnit.new(:name => "L", :expression => 'dm^3')
+  Lookup.add DerivedUnit.new(:name => "gallon", :expression => '3.785411784*L')
+
   Lookup.add_property Property.new(:name => :volume, :expression => 'cubic_meter')
 
 end
