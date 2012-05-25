@@ -18,7 +18,7 @@ module Unite
     end
 
     def convert_to other
-      other = other.clone.tap{|o| o.value = 1.0 }  #this is so that only the unit is used for the conversion 
+      other = other.clone.tap{|o| o.value = BigDecimal.new(1) }  #this is so that only the unit is used for the conversion 
       new_value = self.converted_value(other)
       return nil if new_value.nil?
       self.class.new :value => new_value, :numerator => other.numerator, :denominator => other.denominator
@@ -38,7 +38,7 @@ module Unite
     def get_si_factor unit_array
       expand_unit_array(unit_array).map do |element|
         Lookup.find!(element).si_factor
-      end.inject(1.0) {|product, factor| product*factor}
+      end.inject(BigDecimal.new(1)) {|product, factor| product*factor}
     end
 
   end
