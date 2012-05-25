@@ -36,7 +36,7 @@ module Unite
         end
       end
 
-      context "without unit" do
+      context "with only unit" do
         let(:expression) { "#{unit}" }
         let(:unit) { 'L' } 
 
@@ -44,6 +44,18 @@ module Unite
           Quantity.init(unit).should == quantity
         end
       end
+
+
+      context "with only unit" do
+        let(:expression) { "0.0*#{unit}" }
+        let(:unit) { 'L' }
+        let(:value) { nil }
+
+        it "should initalize via expression" do
+          Quantity.init(value,unit).should == quantity
+        end
+      end
+
     end
   end
 end

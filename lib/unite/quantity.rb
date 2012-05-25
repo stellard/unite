@@ -13,13 +13,12 @@ module Unite
       super
     end
 
+
+    #Initialize the quantity,
+    #
+    #A nil value is treated as 0.0
     def self.init value, unit = ""
-      expression = if unit.present?
-        "#{value}*#{unit}" 
-      else
-        "#{value}" 
-      end
-      new :expression => expression
+      new :expression => [value || 0.0, unit].reject(&:blank?).join('*')
     end
 
     attr_accessor :name, :numerator, :denominator, :cached_expression, :value

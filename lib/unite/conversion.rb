@@ -24,9 +24,9 @@ module Unite
       self.class.new :value => new_value, :numerator => other.numerator, :denominator => other.denominator
     end
 
-    protected 
+    protected
 
-    def converted_value other 
+    def converted_value other
       return nil unless self.compatible?(other)
       self.si_factor / other.si_factor
     end
