@@ -15,7 +15,7 @@ module Unite
     end
 
     def initialize *args
-      self.value ||= 0.0
+      self.value ||= BigDecimal.new(0)
       self.numerator ||= []
       self.denominator ||= []
     end
@@ -30,7 +30,7 @@ module Unite
         self.value = extract_value!(:numerator) / extract_value!(:denominator)
         reduce
       else
-        self.value = 0.0
+        self.value = BigDecimal.new(0)
         self.numerator = []
         self.denominator = []
       end
@@ -55,7 +55,7 @@ module Unite
     end
 
     def inverse
-      new_value = value == 0.0 ? 0.0 : 1.0 / value
+      new_value = value == BigDecimal.new(0) ? BigDecimal.new(0) : BigDecimal.new(1) / value
       self.class.new :value => new_value, :numerator => denominator, :denominator => numerator
     end
 
@@ -87,7 +87,7 @@ module Unite
     def extract_value! method
       number_regex = /\A[-+]?\d*\.?\d+([eE][-+]?\d+)?\Z/
       seperate!(self.send(method)){|x| number_regex =~ x }.map{|n| BigDecimal.new(n)}.
-        inject(1.0){|product, number| product*number }
+        inject(BigDecimal.new(1)){|product, number| product*number }
     end
 
     def reduce_unit_array array

@@ -8,6 +8,16 @@ end
 require 'active_support'
 require 'bigdecimal'
 
+class BigDecimal
+
+  alias :old_to_s :to_s
+  def to_s format = 'F'
+    self.old_to_s(format)
+  end
+
+end
+
+
 # Dir["#{Rails.root.to_s}/lib/units/**/*.rb"].each {|file| require file }
 require 'unite/fraction'
 require 'unite/dimension'

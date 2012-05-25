@@ -14,6 +14,14 @@ shared_examples_for "unit fractions" do
       it { should respond_to(:denominator=) } 
     end
 
+    describe "big decimal" do
+      let(:expression) { '100.12345' }
+      let(:big_decimal) { BigDecimal(expression) }
+
+      # its(:value) { should be_instance_of(BigDecimal) }
+      its(:value) {should == big_decimal }
+    end
+
     describe "#expression" do
 
       context "with blank string" do
