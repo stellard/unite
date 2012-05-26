@@ -24,7 +24,7 @@ module Unite
     def expression=string
       unless string.blank?
         num_denom = string.split('/')
-        raise(InvalidFormat, string) if num_denom.length > 2
+        raise(InvalidFormat, string) if num_denom.length > 2 || num_denom.empty?
         self.numerator = num_denom[0].split('*').map(&:strip)
         self.denominator = (num_denom[1].nil? ? [] : num_denom[1].split('*')).map(&:strip)
         self.value = extract_value!(:numerator) / extract_value!(:denominator)

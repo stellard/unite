@@ -64,12 +64,20 @@ shared_examples_for "unit fractions" do
         its(:expression) { should == '10.0/s' } 
       end
 
-      context 'with invalid format' do
+      context 'with too many /' do
         let(:expression) { 'km/kg/s' }
         it "should raise exception" do
           lambda { subject }.should raise_exception Unite::InvalidFormat
         end
       end
+
+      context 'with only / ' do
+        let(:expression) { '/' }
+        it "should raise exception" do
+          lambda { subject }.should raise_exception Unite::InvalidFormat
+        end
+      end
+
 
       context "with spaces" do
         let(:expression) { '10 * km / 5 *h ' }
