@@ -19,7 +19,7 @@ describe Unite::Dimension do
 
   it "should return the correct si unit" do
     Unite::Dimension::LIST.map{|d| Unite::Dimension.si_unit(d)}.should == 
-      ['meter', 'second', 'kelvin', 'kilogram', 'ampere', 'mole', 'candela', 'pound', '']
+      ['meter', 'second', 'kelvin', 'kilogram', 'ampere', 'mole', 'candela', 'GBP', '']
   end
 
   its(:blank_dimension_vector) { should == [0,0,0,0,0,0,0,0] }

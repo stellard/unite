@@ -23,7 +23,7 @@ module Unite
 
     # also include the dimensionless dimension "none"
     LIST = VECTOR_LIST + [:none]
-    UNITS = ['meter', 'second', 'kelvin', 'kilogram', 'ampere', 'mole', 'candela', 'pound', '']
+    UNITS = ['meter', 'second', 'kelvin', 'kilogram', 'ampere', 'mole', 'candela', 'GBP', '']
     INDICIES = Hash[*LIST.each_with_index.map{|d,i| [d,i]}.flatten]
 
 
