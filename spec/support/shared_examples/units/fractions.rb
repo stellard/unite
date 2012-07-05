@@ -73,9 +73,9 @@ shared_examples_for "unit fractions" do
 
       context 'with only / ' do
         let(:expression) { '/' }
-        it "should raise exception" do
-          lambda { subject }.should raise_exception Unite::InvalidFormat
-        end
+        its(:unit) { should == '' }
+        its(:value) { should == 0.0 }
+        its(:expression) { should == '0.0' } 
       end
 
 
