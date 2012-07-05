@@ -22,7 +22,7 @@ module Unite
 
 
     def expression=string
-      unless string.blank?
+      unless string.blank? || string.strip == '/'
         num_denom = string.split('/')
         raise(InvalidFormat, string) if num_denom.length > 2 || num_denom.empty?
         self.numerator = num_denom[0].split('*').map(&:strip)
