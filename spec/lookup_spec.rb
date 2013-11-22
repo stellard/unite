@@ -9,7 +9,7 @@ module Unite
     describe "adding and finding" do
 
       def unit_stub stubs_hash
-        stub({:valid? => true, :errors => {} , :dimension_int => 30}.merge(stubs_hash))
+        stub({:valid? => true, :errors => {} , :dimension_int => 30, :aliases => []}.merge(stubs_hash))
       end
 
       def property_stub stubs_hash
@@ -23,7 +23,8 @@ module Unite
 
       describe "units" do
         let(:name) { 'scott' }
-        let(:unit_object) { unit_stub(:valid? => valid, :name => name) }
+        let(:aliases) { ['awesome', 'greatest_of_all_time']  }
+        let(:unit_object) { unit_stub(:valid? => valid, :name => name, :aliases => aliases) }
         context "with invalid object" do
           let(:valid) { false }
 
@@ -43,6 +44,11 @@ module Unite
             subject.find!(name).should == unit_object
           end
 
+          it 'should be able to find the unit by alias' do
+            aliases.each do |a|
+              subject.find!(a).should == unit_object
+            end
+          end
 
           it "should raise not found if unit is undefined" do
             lambda { subject.find!(name+"undefined") }.should raise_exception(Lookup::Undefined)
@@ -51,6 +57,16 @@ module Unite
           context "with non uniq name" do
             let(:duplicate_name) { name }
             let(:duplicate_unit_object) { unit_stub(:name => duplicate_name) }
+
+            it "should raise an error" do
+              lambda { subject.add(duplicate_unit_object) }.should raise_exception(Lookup::Duplicate)
+            end
+          end
+
+          context "with non uniq alias" do
+            let(:duplicate_alias) { aliases.first }
+            let(:uniq_name) { name + "uniq" }
+            let(:duplicate_unit_object) { unit_stub(:name => uniq_name, :aliases => [duplicate_alias]) }
 
             it "should raise an error" do
               lambda { subject.add(duplicate_unit_object) }.should raise_exception(Lookup::Duplicate)

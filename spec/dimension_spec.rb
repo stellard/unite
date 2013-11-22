@@ -17,9 +17,14 @@ describe Unite::Dimension do
   end
 
 
-  it "should return the correct si unit" do
+  it "should return the correct si unit for dimension name" do
     Unite::Dimension::LIST.map{|d| Unite::Dimension.si_unit(d)}.should == 
-      ['meter', 'second', 'kelvin', 'kilogram', 'ampere', 'mole', 'candela', 'GBP', '']
+      ['km', 's', 'K', 'kg', 'A', 'mol', 'cd', 'GBP', '']
+  end
+
+  it "should return the correct si unit for dimension index" do
+    Unite::Dimension::LIST.each_with_index.map {|_,i| Unite::Dimension.si_unit(i)}.should == 
+      ['km', 's', 'K', 'kg', 'A', 'mol', 'cd', 'GBP', '']
   end
 
   its(:blank_dimension_vector) { should == [0,0,0,0,0,0,0,0] }

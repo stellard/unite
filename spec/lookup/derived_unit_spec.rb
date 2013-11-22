@@ -20,18 +20,14 @@ module Unite
 
     describe 'based off of simple units' do
       subject { DerivedUnit.new(:name => "J", :expression => 'kg*m^2/s^2') }
-
       its(:dimension_vector) { should == [2, -2, 0, 1, 0, 0, 0, 0] }
       its(:property_name) { should == :energy }
     end
 
     describe 'based off of other derived unit' do
-
       subject { DerivedUnit.new(:name => "kWh", :expression => '3.6e5*J') }
-
       its(:dimension_vector) { should == [2, -2, 0, 1, 0, 0, 0, 0] }
       its(:property_name) { should == :energy }
-
     end
 
     include_examples "comparable unit"

@@ -12,15 +12,15 @@ module Unite
   Lookup.add_property Property.new(:name => :none, :expression => '')
 
   #TIME
-  Lookup.add SimpleUnit.new(:name => "s", :si_factor => 1, :dimension => :time)
-  Lookup.add SimpleUnit.new(:name => "hr", :si_factor => 3600, :dimension => :time)
+  Lookup.add SimpleUnit.new(:name => "s", :si_factor => 1, :dimension => :time, :aliases => ['second', 'seconds'])
+  Lookup.add SimpleUnit.new(:name => "h", :si_factor => 3600, :dimension => :time, :aliases => ['hour', 'hours', 'hr'])
 
-  Lookup.add DerivedUnit.new(:name => "day", :expression => '24*hr')
+  Lookup.add DerivedUnit.new(:name => "day", :expression => '24*hr', :aliases => ['days'])
 
   Lookup.add_property Property.new(:name => :time, :expression => 'hr')
 
   #LENGTH
-  Lookup.add SimpleUnit.new(:name => "m", :si_factor => 1, :dimension => :length)
+  Lookup.add SimpleUnit.new(:name => "m", :si_factor => 1, :dimension => :length, :aliases => ['meter', 'meters'])
   Lookup.add SimpleUnit.new(:name => "cm", :si_factor => 0.01, :dimension => :length)
   Lookup.add SimpleUnit.new(:name => "dm", :si_factor => 0.1, :dimension => :length)
   Lookup.add SimpleUnit.new(:name => "km", :si_factor => 1000, :dimension => :length)
@@ -36,19 +36,18 @@ module Unite
 
 
   #MASS
-  Lookup.add SimpleUnit.new(:name => "g", :si_factor => 1, :dimension => :mass)
-  Lookup.add SimpleUnit.new(:name => "kg", :si_factor => 1000, :dimension => :mass)
-  Lookup.add SimpleUnit.new(:name => "tonne", :si_factor => 1000000, :dimension => :mass)
-  Lookup.add SimpleUnit.new(:name => "metric_tonne", :si_factor => 1000000, :dimension => :mass)
+  Lookup.add SimpleUnit.new(:name => "g", :si_factor => 1, :dimension => :mass, :aliases => ['gram'])
+  Lookup.add SimpleUnit.new(:name => "kg", :si_factor => 1000, :dimension => :mass, :aliases => ['kilogram'])
+  Lookup.add SimpleUnit.new(:name => "t", :si_factor => 1000000, :dimension => :mass, :aliases => ['tonne', 'metric_tonne'])
 
   Lookup.add SimpleUnit.new(:name => "long_ton", :si_factor => 1.01605e6, :dimension => :mass)
   Lookup.add SimpleUnit.new(:name => "short_ton", :si_factor => 907185, :dimension => :mass)
   Lookup.add SimpleUnit.new(:name => "lb", :si_factor => 453.592, :dimension => :mass)
 
-  Lookup.add_property Property.new(:name => :mass, :expression => 'tonne')
+  Lookup.add_property Property.new(:name => :mass, :expression => 'g')
 
 
-  #DIMENSIONLESS
+  #MONEY
   Lookup.add SimpleUnit.new(:name => "GBP", :si_factor => 1, :dimension => :money)
 
   #Right now only one currency is supported. It is too difficult to be able to convert them.
@@ -58,6 +57,23 @@ module Unite
   # Lookup.add SimpleUnit.new(:name => "CAD", :si_factor => nil, :dimension => :money)
 
   Lookup.add_property Property.new(:name => :money, :expression => 'GBP')
+
+
+  #TEMPERATURE
+  Lookup.add SimpleUnit.new(:name => "K", :si_factor => 1, :dimension => :temperature, :aliases => ['kelvin'])
+  Lookup.add_property Property.new(:name => :temperature, :expression => 'K')
+
+  #LUMINOSITY
+  Lookup.add SimpleUnit.new(:name => "cd", :si_factor => 1, :dimension => :luminosity, :aliases => ['candela'])
+  Lookup.add_property Property.new(:name => :luminosity, :expression => 'cd')
+
+  #CURRENT
+  Lookup.add SimpleUnit.new(:name => "A", :si_factor => 1, :dimension => :current, :aliases => ['amp', 'ampere'])
+  Lookup.add_property Property.new(:name => :current, :expression => 'A')
+
+  #MOLE
+  Lookup.add SimpleUnit.new(:name => "mol", :si_factor => 1, :dimension => :substance, :aliases => ['mole'])
+  Lookup.add_property Property.new(:name => :substance, :expression => 'mol')
 
 
   #DERIVED UNITS

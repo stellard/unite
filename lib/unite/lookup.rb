@@ -21,9 +21,19 @@ module Unite
     class << self
       def add object
         raise Invalid, object.errors.inspect unless object.valid?
-        raise Duplicate, "The Unit #{object.name} already exists" unless @@unit_names[object.name.to_sym].nil?
+
+        names = [object.name] + object.aliases
+
+        names.each do |name|
+          raise Duplicate, "The Unit #{name} already exists" unless @@unit_names[name.to_sym].nil?
+        end
+
         key = store_object object
-        @@unit_names[object.name.to_sym] = key
+
+        names.each do |name|
+           @@unit_names[name.to_sym] = key
+        end
+
         @@unit_ints[object.dimension_int] ||= []
         @@unit_ints[object.dimension_int] << key
       end

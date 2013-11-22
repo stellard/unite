@@ -1,11 +1,10 @@
 # -*- encoding : utf-8 -*-
 module Unite
-  class Quantity
+  class Unit
 
     include Dimension::Vector
-    include Conversion
-    include Arithmetic
-    include Simplify
+    include Comparison
+    include SiFactor
 
     def initialize(attributes = {})
       attributes.each do |name, value|
@@ -17,12 +16,19 @@ module Unite
     #Initialize the quantity,
     #
     #A nil value is treated as 0.0
-    def self.init value, unit = ""
-      new :expression => [value || 0.0, unit].reject(&:blank?).join('*')
+    def self.init unit
+      new :expression => "#{unit}"
     end
 
-    attr_accessor :name, :numerator, :denominator, :cached_expression, :value
+    attr_accessor :name, :numerator, :denominator, :cached_expression
     alias :to_s :expression
 
+    def value
+      @value ||= BigDecimal.new(1)
+    end
+
+    def value= x
+      value
+    end
   end
 end

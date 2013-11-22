@@ -12,6 +12,7 @@ module Unite
     include_examples "convertable value"
     include_examples "dimension vectors"
     include_examples "unit fractions"
+    include_examples "simplify units"
 
 
     describe ".init" do

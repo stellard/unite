@@ -23,12 +23,16 @@ module Unite
 
     # also include the dimensionless dimension "none"
     LIST = VECTOR_LIST + [:none]
-    UNITS = ['meter', 'second', 'kelvin', 'kilogram', 'ampere', 'mole', 'candela', 'GBP', '']
+    UNITS = ['km', 's', 'K', 'kg', 'A', 'mol', 'cd', 'GBP', '']
     INDICIES = Hash[*LIST.each_with_index.map{|d,i| [d,i]}.flatten]
 
 
-    def si_unit dimension
-      UNITS[INDICIES[dimension.to_sym]]
+    def si_unit dimension_name_or_index
+      if dimension_name_or_index.kind_of? Fixnum
+        UNITS[dimension_name_or_index]
+      else
+        UNITS[INDICIES[dimension_name_or_index.to_sym]]
+      end
     end
 
     def blank_dimension_vector

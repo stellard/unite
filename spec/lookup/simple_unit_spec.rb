@@ -31,10 +31,8 @@ module Unite
     describe "instance methods" do
       let(:dimension) { :length }
       subject { Fabricate.build :simple_unit, :name => "m", :si_factor => 1, :dimension => :length }
-
       its(:dimension_vector) { should == Dimension::VECTOR_LIST.map{|d| d == dimension ? 1 : 0}}
       its(:property_name) { should == :distance }
-
     end
 
     describe "class methods" do

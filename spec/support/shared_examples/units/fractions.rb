@@ -6,12 +6,12 @@ shared_examples_for "unit fractions" do
 
     describe "required methods" do
       subject {  described_class.new }
-      it { should respond_to(:value) } 
-      it { should respond_to(:value=) } 
-      it { should respond_to(:numerator) } 
-      it { should respond_to(:numerator=) } 
-      it { should respond_to(:denominator=) } 
-      it { should respond_to(:denominator=) } 
+      it { should respond_to(:value) }
+      it { should respond_to(:value=) }
+      it { should respond_to(:numerator) }
+      it { should respond_to(:numerator=) }
+      it { should respond_to(:denominator=) }
+      it { should respond_to(:denominator=) }
     end
 
     describe "big decimal" do
@@ -37,7 +37,7 @@ shared_examples_for "unit fractions" do
 
         its(:unit) { should == '' }
         its(:value) { should == 5.7 }
-        its(:expression) { should == '5.7' } 
+        its(:expression) { should == '5.7' }
       end
 
       context "with number and unit" do
@@ -45,7 +45,7 @@ shared_examples_for "unit fractions" do
 
         its(:unit) { should == 'm/s^2' }
         its(:value) { should == 2.0 }
-        its(:expression) { should == '2.0*m/s^2' } 
+        its(:expression) { should == '2.0*m/s^2' }
       end
 
       context "with only unit" do
@@ -53,7 +53,7 @@ shared_examples_for "unit fractions" do
 
         its(:unit) { should == 'm/s' }
         its(:value) { should == 1.0 }
-        its(:expression) { should == '1.0*m/s' } 
+        its(:expression) { should == '1.0*m/s' }
       end
 
       context "with no numerator" do
@@ -61,7 +61,7 @@ shared_examples_for "unit fractions" do
 
         its(:unit) { should == '1.0/s' }
         its(:value) { should == 10.0 }
-        its(:expression) { should == '10.0/s' } 
+        its(:expression) { should == '10.0/s' }
       end
 
       context 'with too many /' do
@@ -75,25 +75,33 @@ shared_examples_for "unit fractions" do
         let(:expression) { '/' }
         its(:unit) { should == '' }
         its(:value) { should == 0.0 }
-        its(:expression) { should == '0.0' } 
+        its(:expression) { should == '0.0' }
       end
 
 
       context "with spaces" do
-        let(:expression) { '10 * km / 5 *h ' }
+        let(:expression) { '10 * km / 5 *h' }
 
         its(:unit) { should == 'km/h' }
         its(:value) { should == 2.0 }
-        its(:expression) { should == '2.0*km/h' } 
+        its(:expression) { should == '2.0*km/h' }
       end
 
+
+      context "with negative exponent" do
+        let(:expression) { '2 * s^-2 / m^-1 ' }
+
+        its(:unit) { should == 'm/s^2' }
+        its(:value) { should == 2.0 }
+        its(:expression) { should == '2.0*m/s^2' }
+      end
     end
 
     describe 'default' do
-      subject { described_class.new } 
+      subject { described_class.new }
       its(:unit) { should == '' }
       its(:value) { should == 0.0 }
-      its(:denominator) { should == [] } 
+      its(:denominator) { should == [] }
       its(:numerator) { should == [] }
     end
 
@@ -110,14 +118,14 @@ shared_examples_for "unit fractions" do
         let(:expression) { 'kg*s^2/s*kg^3' }
 
         its(:unit) { should == 's/kg^2' }
-        its(:expression) { should == '1.0*s/kg^2' } 
+        its(:expression) { should == '1.0*s/kg^2' }
       end
 
       context "with empty numerator" do
         let(:expression) { 'kg/kg^3' }
 
         its(:unit) { should == '1.0/kg^2' }
-        its(:expression) { should == '1.0/kg^2' } 
+        its(:expression) { should == '1.0/kg^2' }
       end
 
     end

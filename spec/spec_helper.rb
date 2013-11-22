@@ -6,7 +6,7 @@ $LOAD_PATH.unshift(File.dirname(__FILE__))
 
 
 begin
-  require 'ruby-debug'
+  require 'byebug'
   puts "USING DEBUGGER"
 rescue
   puts "NOT USING DEBUGGER"
@@ -18,7 +18,6 @@ require 'shoulda/matchers/active_model'
 require 'mocha'
 require 'unite'
 require 'fabrication'
-
 
 # Requires supporting files with custom matchers and macros, etc,
 # in ./support/ and its subdirectories.

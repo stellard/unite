@@ -5,7 +5,7 @@ module Unite
     include ActiveModel::Validations
     include Dimension::Integer
 
-    attr_accessor :dimension, :name, :si_factor
+    attr_accessor :dimension, :name, :si_factor, :aliases
     alias :to_s :name
 
     validates_inclusion_of :dimension, :in => Dimension::LIST
@@ -20,6 +20,10 @@ module Unite
       attributes.each do |name, value|
         send("#{name}=", value)
       end
+    end
+
+    def aliases
+      @aliases ||= []
     end
 
   end

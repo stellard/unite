@@ -6,7 +6,7 @@ module Unite
     include Dimension::Vector
     include Conversion
 
-    attr_accessor :name, :numerator, :denominator, :value
+    attr_accessor :name, :numerator, :denominator, :value, :aliases
 
     alias :to_s :name
     validates_presence_of :name
@@ -19,6 +19,9 @@ module Unite
       super
     end
 
+    def aliases
+      @aliases ||= []
+    end
 
   end
 end

@@ -7,7 +7,7 @@ module Unite
 
     extend ::ActiveSupport::Concern
     include Comparison
-    include Fraction
+    include SiFactor
 
     included do
 
@@ -18,27 +18,37 @@ module Unite
     end
 
     def convert_to other
-      other = other.clone.tap{|o| o.value = BigDecimal.new(1) }  #this is so that only the unit is used for the conversion 
-      new_value = self.converted_value(other)
+      other = cast_to_unit other
+      new_value, new_numerator, new_denominator = converted(other)
       return nil if new_value.nil?
-      self.class.new :value => new_value, :numerator => other.numerator, :denominator => other.denominator
+      self.class.new :value => new_value, :numerator => new_numerator, :denominator => new_denominator
+    end
+
+    def convert_to! other
+      other = cast_to_unit other
+      compatible! other
+      new_value, new_numerator, new_denominator = converted(other)
+      self.value = new_value
+      self.numerator = new_numerator
+      self.denominator = new_denominator
+      self
     end
 
     protected
 
+    def cast_to_unit other
+      other = Unit.init(other.is_a?(String) ? other : other.unit)
+    end
+
+    def converted other
+      new_value = self.converted_value(other)
+      return [nil, nil, nil] if new_value.nil?
+      return [new_value, other.numerator, other.denominator]
+    end
+
     def converted_value other
       return nil unless self.compatible?(other)
       self.si_factor / other.si_factor
-    end
-
-    def si_factor
-      value * (get_si_factor(numerator) / get_si_factor(denominator))
-    end
-
-    def get_si_factor unit_array
-      expand_unit_array(unit_array).map do |element|
-        Lookup.find!(element).si_factor
-      end.inject(BigDecimal.new(1)) {|product, factor| product*factor}
     end
 
   end

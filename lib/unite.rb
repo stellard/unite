@@ -21,11 +21,13 @@ end
 # Dir["#{Rails.root.to_s}/lib/units/**/*.rb"].each {|file| require file }
 require 'unite/fraction'
 require 'unite/dimension'
+require 'unite/si_factor'
 require 'unite/comparison'
 require 'unite/conversion'
 require 'unite/arithmetic'
+require 'unite/simplify'
 
-
+require "unite/unit"
 require 'unite/lookup'
 
 require "unite/quantity"

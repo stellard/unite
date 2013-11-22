@@ -102,6 +102,27 @@ shared_examples "unit arithmetic" do
         include_examples "division operation"
       end
 
+
+      context "that are compatible but inverse" do
+        let(:expression1) { "10*km" }
+        let(:expression2) { "1000/m" }
+
+
+        let(:division_result) { [0.00001, 'km^2'] }
+        let(:multiplication_result) { [10000000, ''] }
+
+        include_examples "multiplication operation"
+        include_examples "division operation"
+
+        it "should raise error for subtraction" do
+          lambda { object1 - object2 }.should raise_exception Unite::IncompatibleError
+        end
+        it "should raise error for addition" do
+          lambda { object1 + object2 }.should raise_exception Unite::IncompatibleError
+        end
+      end
+
+
       context "that are incompatible " do
         let(:expression1) { "10*kg" }
         let(:expression2) { "10*m" }
