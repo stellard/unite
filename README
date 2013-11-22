@@ -1,3 +1,35 @@
 gem install unite
 
 gem 'unite'
+
+
+Based on 
+
+http://www.cs.utexas.edu/users/novak/units95.html
+
+
+Handles the following dimensions 
+
+ [:length, :time, :temperature, :mass, :current, :substance, :luminosity, :money]
+ 
+ 
+ Note: Conversion of Money is not currently supported
+ 
+ 
+ Can use Unite::Quantity to represent values or include the functionality into your own objects.
+ 
+ Look at https://github.com/stellard/unite/blob/master/lib/unite/quantity.rb for a minum implementation
+ 
+ Examples: (needs more info here)
+ 
+ Unite::Quantity.init("1000*km")
+ Unite::Quantity.init("1000","km")
+
+ Unit definitions are found here
+ 
+ https://github.com/stellard/unite/blob/master/lib/unite/lookup/definitions.rb
+ 
+ Specs show good examples of use. 
+ 
+ I will add more to readme
+
