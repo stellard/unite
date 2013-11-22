@@ -8,7 +8,7 @@ GIT
 PATH
   remote: .
   specs:
-    unite (1.2.0)
+    unite (1.3.0)
       activemodel (>= 3.0.0)
       activesupport (>= 3.0.0)
 
