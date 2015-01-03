@@ -1,13 +1,12 @@
 # Install
 
-## With Bundler
-
+**With Bundler**
 ```ruby
 gem 'unite'
 ```
 
-## Without Bundler
-```ruby
+**Without Bundler**
+```bash
 gem install unite
 ```
 
