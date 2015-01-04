@@ -29,20 +29,22 @@ Handles the following dimensions:
 
 _Note: **Conversion** of Money is not currently supported._
  
-Can use Unite::Quantity to represent values or include the functionality into your own objects.
+Can use `Unite::Quantity` to represent values or include the functionality into your own objects.
  
 Look at https://github.com/stellard/unite/blob/master/lib/unite/quantity.rb for a minum implementation
  
 
-# Examples: (needs more info here)
+# Examples:
+
+_TODO: Needs more info here._
  
 ```ruby
 Unite::Quantity.init("1000*km")
 Unite::Quantity.init("1000","km")
 ```
 
- Unit definitions are found here
+Unit definitions are found here:
  
- https://github.com/stellard/unite/blob/master/lib/unite/lookup/definitions.rb
+  https://github.com/stellard/unite/blob/master/lib/unite/lookup/definitions.rb
  
- Specs show good examples of use. 
+Specs show good examples of use. 
