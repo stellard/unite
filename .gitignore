@@ -1,3 +1,5 @@
 .rvmrc
+.ruby-version
+.rspec
 .DS_Store
 pkg
