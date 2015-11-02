@@ -12,18 +12,17 @@ module Unite
     # 4  current   ampere
     # 5  substance   mole
     # 6  luminosity  candela
-    # 7  money   pound
     #
 
-    VECTOR_LIST = [:length, :time, :temperature, :mass, :current, :substance, :luminosity, :money]
+    VECTOR_LIST = [:length, :time, :temperature, :mass, :current, :substance, :luminosity]
 
-    DIMSIZES =  [20, 20, 20, 10, 10, 10, 10, 10]
-    DIMVALS  =  [1, 20, 400, 8000, 80000, 800000, 8000000, 80000000]
+    DIMSIZES =  [20, 20, 20, 10, 10, 10, 10]
+    DIMVALS  =  [1, 20, 400, 8000, 80000, 800000, 8000000]
 
 
     # also include the dimensionless dimension "none"
     LIST = VECTOR_LIST + [:none]
-    UNITS = ['km', 's', 'K', 'kg', 'A', 'mol', 'cd', 'GBP', '']
+    UNITS = ['km', 's', 'K', 'kg', 'A', 'mol', 'cd', '']
     INDICIES = Hash[*LIST.each_with_index.map{|d,i| [d,i]}.flatten]
 
 

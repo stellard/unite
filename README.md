@@ -24,27 +24,25 @@ Based on the algorithms developed by Gordon S. Novak, Jr. at the University of T
 Handles the following dimensions:
 
 ```ruby
-[:length, :time, :temperature, :mass, :current, :substance, :luminosity, :money]
+[:length, :time, :temperature, :mass, :current, :substance, :luminosity]
 ```
 
-_Note: **Conversion** of Money is not currently supported._
- 
 Can use `Unite::Quantity` to represent values or include the functionality into your own objects.
- 
+
 Look at https://github.com/stellard/unite/blob/master/lib/unite/quantity.rb for a minum implementation
- 
+
 
 # Examples:
 
 _TODO: Needs more info here._
- 
+
 ```ruby
 Unite::Quantity.init("1000*km")
 Unite::Quantity.init("1000","km")
 ```
 
 Unit definitions are found here:
- 
+
   https://github.com/stellard/unite/blob/master/lib/unite/lookup/definitions.rb
- 
-Specs show good examples of use. 
+
+Specs show good examples of use.

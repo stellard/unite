@@ -46,19 +46,6 @@ module Unite
 
   Lookup.add_property Property.new(:name => :mass, :expression => 'g')
 
-
-  #MONEY
-  Lookup.add SimpleUnit.new(:name => "GBP", :si_factor => 1, :dimension => :money)
-
-  #Right now only one currency is supported. It is too difficult to be able to convert them.
-
-  # Lookup.add SimpleUnit.new(:name => "EUR", :si_factor => nil, :dimension => :money)
-  # Lookup.add SimpleUnit.new(:name => "USD", :si_factor => nil, :dimension => :money)
-  # Lookup.add SimpleUnit.new(:name => "CAD", :si_factor => nil, :dimension => :money)
-
-  Lookup.add_property Property.new(:name => :money, :expression => 'GBP')
-
-
   #TEMPERATURE
   Lookup.add SimpleUnit.new(:name => "K", :si_factor => 1, :dimension => :temperature, :aliases => ['kelvin'])
   Lookup.add_property Property.new(:name => :temperature, :expression => 'K')
